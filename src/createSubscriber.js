@@ -40,7 +40,7 @@ const createSubscriber =
     // we need to place this logic here and not in ensureIsSubscription as if we
     // do so, then flow is not able to infer we are validating operation
     if (!operation || getOperationType(operation) !== "subscription") {
-      throw new Error(`Expected subscription, but instead got:\n${(operation: any)}`)
+      throw new Error(`Expected subscription, but instead got:\n${operation}`)
     }
 
     const notifier = send(absintheSocket, { operation, variables })
